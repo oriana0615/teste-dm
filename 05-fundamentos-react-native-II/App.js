@@ -6,6 +6,7 @@ import JavascriptComponente from './componentes/JavascriptComponente';
 import Perfil from './componentes/Perfil';
 import ListaComponente from './componentes/ListaComponente';
 import Pessoa from './componentes/Pessoa';
+import Atleta from './componentes/Atleta';
 
 
 
@@ -47,7 +48,7 @@ export default function App() {
   return (
     <ScrollView>
 
-      <View style={styles.container}>
+      {/* <View style={styles.container}>
         <StatusBar style="auto" />
 
         {
@@ -60,7 +61,29 @@ export default function App() {
               )
             }
           )
+        } */}
+        
+        <View style={styles.container}>
+        <StatusBar style="auto" />
+
+        {
+          listaJogadores.map(
+            jogador => {
+              return (
+                <Atleta
+                  
+                  nome={jogador.nome}
+                  idade={jogador.idade}
+                  imagem={jogador.imagem}
+
+                />
+              )
+            }
+          )
         }
+
+
+
 
 
       </View>
